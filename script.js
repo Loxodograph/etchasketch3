@@ -4,8 +4,8 @@ const button = document.getElementById('submit-btn');
 const slider = document.getElementById("myRange");
 const sliderValue = document.getElementById("slider-value");
 
-// slider.addEventListener("onclick", updateSliderText);
-// slider.addEventListener("click", updateSliderText);
+slider.addEventListener("onclick", updateSliderText);
+slider.addEventListener("click", updateSliderText);
 slider.addEventListener("change", updateSliderText);
 sliderValue.style.color = `black`;
 
