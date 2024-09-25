@@ -1,6 +1,12 @@
 let gridHolder = document.querySelector(".grid-holder");
 let container = document.querySelector('.container');
 const button = document.getElementById('submit-btn');
+const slider = document.getElementById("myRange");
+const sliderValue = document.getElementById("slider-value");
+
+slider.addEventListener("onclick", updateSliderText);
+slider.addEventListener("click", updateSliderText);
+sliderValue.style.color = `black`;
 
 function generateDivs() {
   
@@ -43,16 +49,25 @@ function gridSize() {
   const value = document.getElementById("myRange").value;
   return value;
 }
+//generates default grid
 generateDivs()
+
+//chooses and resets gridSize
 button.addEventListener("click", function() {
   removeElementsByClass("grid");
   generateDivs();
 })
 
-//remove elements by class
+//remove elements by class Resets grid
 function removeElementsByClass(className) {
   let elements = document.getElementsByClassName(className);
   while(elements.length > 0) {
       elements[0].parentNode.removeChild(elements[0]);
   }
+}
+
+//update slider choice
+function updateSliderText() {
+  let value = document.getElementById("myRange").value;
+  sliderValue.innerText = `${value} x ${value}`;
 }
